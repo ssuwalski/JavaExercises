@@ -17,6 +17,8 @@ public class Main {
         dog.name = "Akita";
         me.pet = dog;
 
+        System.out.println("testestestestest");
+
         me.pet.feed();
         me.pet.feed();
         me.pet.feed();
