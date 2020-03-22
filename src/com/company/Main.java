@@ -17,31 +17,22 @@ public class Main {
         dog.name = "Akita";
         me.pet = dog;
 
-        System.out.println("testestestestest");
-
         me.pet.feed();
         me.pet.feed();
         me.pet.feed();
 
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        me.pet.takeForAWalk();
-//        for (int i = 0; )
-//        do{
-//            me.pet.takeForAWalk();
-//        }while (me.pet.imDead());
+        me.setSalary(2000.0);
+        Car passat = new Car("Volkswagen", "Passat", 1984, 1.9, "Red");
+        me.setCar(passat);
+        System.out.println("I'm driving " + me.getCar().model);
 
-        me.car = new Car("Volkswagen","Passat",1984,1.9,"Red");
+        Human myWife = new Human();
+        myWife.firstName = "Halina";
+        myWife.lastName = "Malina";
+        myWife.setSalary(3000.0);
+        myWife.setCar(passat);
 
+        System.out.println(me.getCar());
+        System.out.println(myWife.getCar());
     }
 }
