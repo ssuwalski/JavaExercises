@@ -3,18 +3,17 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
 import com.company.devices.Car;
-import com.company.devices.Phone;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Human me = new Human();
         me.firstName = "Jacek";
         me.lastName = "Placek";
         me.pet = new Animal("mouse");
         me.pet.name = "Myszojeleń";
-//        me.pet.feed();
+        me.pet.feed();
 
         System.out.println(me.pet.name);
 
@@ -22,27 +21,50 @@ public class Main {
         dog.name = "Akita";
         me.pet = dog;
 
-//        me.pet.feed();
-//        me.pet.feed();
-//        me.pet.feed();
+        me.pet.feed();
+        me.pet.feed();
+        me.pet.feed();
 
-        me.setSalary(2000.0);
-        Car passat = new Car("Volkswagen", "Passat", 1984, 1.9, "Red");
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        me.pet.takeForAWalk();
+//        for (int i = 0; )
+//        do{
+        //          me.pet.takeForAWalk();
+        //     }while (me.pet.imDead());
+        Car passat = new Car("Volkswagen", "Passat", 1984, 1.9, "Red", 100000.0);
+        me.setSalary(20000.0);
         me.setCar(passat);
-        System.out.println("I'm driving " + me.getCar().model);
 
-        Human myWife = new Human();
-        myWife.firstName = "Karolina";
-        myWife.lastName = "Warda";
-        myWife.setSalary(32000.0);
-        myWife.setCar(passat);
+        Human John = new Human();
+        John.setSalary(15000.0);
+        John.pet = new Animal("dog");
+        John.firstName = "John";
+        John.lastName = "Smith";
+        John.setCar(passat);
 
         System.out.println(me.getCar());
-        System.out.println(myWife.getCar());
+        System.out.println(John.getCar());
 
         System.out.println(me);
         System.out.println(me.species);
         me.feed();
 
+        me.pet.beEaten();
+//        me.beEaten();
+
+//        me.sell();
+        passat.sell();
+        me.pet.sell();
     }
 }

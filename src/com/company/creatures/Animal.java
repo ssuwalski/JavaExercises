@@ -1,10 +1,12 @@
 package com.company.creatures;
 
+import com.company.Saleable;
+
 import java.io.File;
 import java.sql.SQLOutput;
 
-public class Animal {
-    public final String species;
+public class Animal implements Edible, Saleable {
+    final public String species;
     protected Double weight;
     public String name;
     File pic;
@@ -26,7 +28,6 @@ public class Animal {
                 this.weight = DEAFAULT_LION_WEIGHT;
                 break;
         }
-
     }
 
     public void feed() {
@@ -51,7 +52,7 @@ public class Animal {
 
     public boolean imDead() {
         if (weight <= 0.0) {
-            System.out.println("Your animal is dead");
+            System.out.println("Your dog is dead");
             return false;
         } else {
             return true;
@@ -61,5 +62,24 @@ public class Animal {
 
     public String toString() {
         return this.species + " " + this.name;
+    }
+
+    @Override
+    public void beEaten() throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("no way you cannibal!!!!!11!!!");
+        } else {
+            System.out.println("adiooooooos");
+            this.weight = 0.0;
+        }
+    }
+
+    @Override
+    public void sell() throws Exception {
+        if (this instanceof Human) {
+            throw new Exception("times of slavery are over. bastard!!!11!!!");
+        } else {
+            System.out.println("money money money");
+        }
     }
 }

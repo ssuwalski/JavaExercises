@@ -1,9 +1,11 @@
 package com.company.devices;
 
-public class Device {
-    final public String mark;
-    final public String model;
-    final public Integer yearOfProduction;
+import com.company.Saleable;
+
+public abstract class Device implements Saleable {
+    public final String mark;
+    public final String model;
+    public final Integer yearOfProduction;
     public Double value;
 
     public Device(String mark, String model, Integer yearOfProduction) {
@@ -12,8 +14,5 @@ public class Device {
         this.yearOfProduction = yearOfProduction;
     }
 
-
-    public String toString() {
-        return mark + " " + model + " " + yearOfProduction;
-    }
+    abstract void turnOn();
 }

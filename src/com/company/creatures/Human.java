@@ -1,5 +1,7 @@
 package com.company.creatures;
 
+import com.company.Saleable;
+import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -24,24 +26,26 @@ public class Human extends Animal {
     }
 
     public void setSalary(Double salary) {
-        System.out.println("Your salary is now: " + salary);
         this.salary = salary;
     }
 
-    public Car getCar() {
-        return car;
-    }
 
     public void setCar(Car car) {
-        if (this.salary > car.value) {
-            System.out.println("you bought is by cash");
-            this.car = car;
-        } else if (this.salary >= car.value / 12) {
-            System.out.println("you bought it on credit");
+        if (car.value > (48 * this.salary)) {
+            System.out.println("Samochód jest za drogi nie stać Cię!");
+        } else if (car.value <= (48 * this.salary)) {
+            System.out.println("Możesz wziąć samochód w leasing");
             this.car = car;
         } else {
-            System.out.println("sorry, first ask for a rise");
+            System.out.println("Samochód należy do Ciebie");
+            this.car = car;
         }
+
+    }
+
+
+    public Car getCar() {
+        return car;
     }
 
     public String toString() {
