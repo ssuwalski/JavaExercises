@@ -3,6 +3,7 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Main {
 
@@ -13,7 +14,7 @@ public class Main {
         me.lastName = "Placek";
         me.pet = new Animal("mouse");
         me.pet.name = "Myszojeleń";
-        me.pet.feed();
+//        me.pet.feed();
 
         System.out.println(me.pet.name);
 
@@ -21,9 +22,9 @@ public class Main {
         dog.name = "Akita";
         me.pet = dog;
 
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.feed();
+//        me.pet.feed();
+//        me.pet.feed();
+//        me.pet.feed();
 
         me.setSalary(2000.0);
         Car passat = new Car("Volkswagen", "Passat", 1984, 1.9, "Red");
@@ -31,12 +32,17 @@ public class Main {
         System.out.println("I'm driving " + me.getCar().model);
 
         Human myWife = new Human();
-        myWife.firstName = "Halina";
-        myWife.lastName = "Malina";
-        myWife.setSalary(3000.0);
+        myWife.firstName = "Karolina";
+        myWife.lastName = "Warda";
+        myWife.setSalary(32000.0);
         myWife.setCar(passat);
 
         System.out.println(me.getCar());
         System.out.println(myWife.getCar());
+
+        System.out.println(me);
+        System.out.println(me.species);
+        me.feed();
+
     }
 }
